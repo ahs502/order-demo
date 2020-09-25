@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import State from "../models/State";
+import type State from "../store/State";
 
 export default function useTypedSelector<T = unknown>(
   selector: (state: State) => T,

@@ -1,5 +1,4 @@
-import State from "../models/State";
-
+import type State from "./State";
 import initialState from "./initial-state";
 
 //TODO: Improve the Action type
