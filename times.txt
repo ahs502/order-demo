@@ -17,4 +17,6 @@ Sep 26:
 
 Transaction reduciton logic:
 10:05 - 13:10 = 03:05
-14:50 - 
+
+Persistent & Async action for initializing content:
+14:50 - 16:10 = 01:20
