@@ -1,6 +1,6 @@
-import type Content from "../../models/Content";
-import type Transaction from "../../models/Transaction";
-import type InitializeContentSucceededAction from "../actions/InitializeContentSucceededAciton";
+import Content from "../../models/Content";
+import Transaction from "../../models/Transaction";
+import InitializeContentSucceededAction from "../actions/InitializeContentSucceededAciton";
 import ActionType from "../ActionType";
 
 export default function initializeContentSucceeded(

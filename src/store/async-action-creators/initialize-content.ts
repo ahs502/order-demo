@@ -1,4 +1,4 @@
-import type { ThunkAction } from "../Thunk";
+import { ThunkAction } from "../Thunk";
 
 import persistent from "../../persistent";
 

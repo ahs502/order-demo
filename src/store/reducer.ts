@@ -1,5 +1,5 @@
 import State, { ContentInitializationStatus } from "./State";
-import type Action from "./Action";
+import Action from "./Action";
 import initialState from "./initial-state";
 import ActionType from "./ActionType";
 

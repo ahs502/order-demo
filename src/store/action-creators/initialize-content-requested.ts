@@ -1,4 +1,4 @@
-import type InitializeContentRequestedAction from "../actions/InitializeContentRequestedAction";
+import InitializeContentRequestedAction from "../actions/InitializeContentRequestedAction";
 import ActionType from "../ActionType";
 
 export default function initializeContentRequested(): InitializeContentRequestedAction {

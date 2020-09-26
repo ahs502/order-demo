@@ -1,5 +1,5 @@
-import type Content from "../../../models/Content";
-import type DeleteCardTransaction from "../../../models/transactions/card-transactions/DeleteCardTransaction";
+import Content from "../../../models/Content";
+import DeleteCardTransaction from "../../../models/transactions/card-transactions/DeleteCardTransaction";
 
 export default function reduceContentWithDeleteCardTransaction(
   content: Content,

@@ -1,6 +1,6 @@
 import localForage from "localforage";
 
-import type Persistent from "./Persistent";
+import Persistent from "./Persistent";
 
 interface PersistentAccessor<K extends keyof Persistent> {
   get(defaultValue?: Persistent[K]): Promise<Persistent[K] | undefined>;

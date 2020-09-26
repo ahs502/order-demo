@@ -1,6 +1,6 @@
 import { Action } from "redux";
 
-import type ActionType from "../ActionType";
+import ActionType from "../ActionType";
 
 type BaseAction<T extends ActionType> = Action<T>;
 

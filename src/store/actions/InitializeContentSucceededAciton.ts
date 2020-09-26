@@ -1,8 +1,8 @@
-import type ActionType from "../ActionType";
-import type BaseAction from "./BaseAction";
+import ActionType from "../ActionType";
+import BaseAction from "./BaseAction";
 
-import type Content from "../../models/Content";
-import type Transaction from "../../models/Transaction";
+import Content from "../../models/Content";
+import Transaction from "../../models/Transaction";
 
 export default interface InitializeContentSucceededAction
   extends BaseAction<ActionType.INITIALIZE_CONTENT_SUCCEEDED> {

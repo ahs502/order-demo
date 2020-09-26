@@ -1,5 +1,5 @@
-import type Content from "../models/Content";
-import type User from "../models/User";
+import Content from "../models/Content";
+import User from "../models/User";
 
 export default interface State {
   readonly currentUser: User;

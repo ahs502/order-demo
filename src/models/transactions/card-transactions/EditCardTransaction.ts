@@ -1,7 +1,7 @@
-import type BaseCardTransaction from "./BaseCardTransaction";
-import type CardTransactionType from "./CardTransactionType";
+import BaseCardTransaction from "./BaseCardTransaction";
+import CardTransactionType from "./CardTransactionType";
 
-import type Card from "../../Card";
+import Card from "../../Card";
 
 export default interface EditCardTransaction
   extends BaseCardTransaction<CardTransactionType.EDIT_CARD> {

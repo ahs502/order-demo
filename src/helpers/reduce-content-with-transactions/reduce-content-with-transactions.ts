@@ -1,5 +1,5 @@
-import type Content from "../../models/Content";
-import type Transaction from "../../models/Transaction";
+import Content from "../../models/Content";
+import Transaction from "../../models/Transaction";
 
 import reduceContentWithTransaction from "./helpers/reduce-content-with-transaction";
 

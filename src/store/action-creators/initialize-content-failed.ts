@@ -1,4 +1,4 @@
-import type InitializeContentFailedAction from "../actions/InitializeContentFailedAction";
+import InitializeContentFailedAction from "../actions/InitializeContentFailedAction";
 import ActionType from "../ActionType";
 
 export default function initializeContentFailed(

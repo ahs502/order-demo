@@ -1,5 +1,5 @@
-import type Content from "../../../models/Content";
-import type EditCardTransaction from "../../../models/transactions/card-transactions/EditCardTransaction";
+import Content from "../../../models/Content";
+import EditCardTransaction from "../../../models/transactions/card-transactions/EditCardTransaction";
 
 export default function reduceContentWithEditCardTransaction(
   content: Content,
