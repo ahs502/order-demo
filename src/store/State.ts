@@ -3,6 +3,11 @@ import type User from "../models/User";
 
 export default interface State {
   readonly currentUser: User | null;
-  readonly contentInitialized: boolean;
+  readonly contentInitializationStatus:
+    | "not initialized"
+    | "initializing"
+    | "initialized"
+    | "failed to be initialized";
+  readonly contentInitializationError: any;
   readonly content: Content;
 }

@@ -2,7 +2,8 @@ import type State from "./State";
 
 const initialState: State = {
   currentUser: null,
-  contentInitialized: false,
+  contentInitializationStatus: "not initialized",
+  contentInitializationError: null,
   content: {
     pages: [],
   },
