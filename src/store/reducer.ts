@@ -22,8 +22,8 @@ export default function reducer(
         ...state,
         contentInitializationStatus: ContentInitializationStatus.INITIALIZED,
         content: reduceContentWithTransactions(
-          action.content,
-          action.transactions
+          action.content || state.content,
+          action.transactions || []
         ),
       };
 

@@ -1,9 +1,11 @@
-import generateDummyData from "../../helpers/generate-dummy-data";
+import type ThunkAction from "../ThunkAction";
+
+import persistent from "../../persistent";
+
 import initializeContentFailed from "../action-creators/initialize-content-failed";
 import initializeContentRequested from "../action-creators/initialize-content-requested";
 import initializeContentSucceeded from "../action-creators/initialize-content-succeeded";
 import isContentNotInitialized from "../selectors/is-content-not-initialized";
-import type ThunkAction from "../ThunkAction";
 
 export default function initializeContent(): ThunkAction {
   return async (dispatch, getState) => {
@@ -13,11 +15,12 @@ export default function initializeContent(): ThunkAction {
     dispatch(initializeContentRequested());
 
     try {
-      //TODO: Read content from local storage.
+      const [content, transactions] = await Promise.all([
+        persistent("content").get(),
+        persistent("transactions").get(),
+      ]);
 
-      dispatch(
-        initializeContentSucceeded(generateDummyData(), generateDummyData())
-      );
+      dispatch(initializeContentSucceeded(content, transactions));
     } catch (error) {
       dispatch(initializeContentFailed(error));
     }
