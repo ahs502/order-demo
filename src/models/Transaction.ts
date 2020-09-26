@@ -1,4 +1,4 @@
-import CardTransaction from "./transactions/CardTransaction";
+import type CardTransaction from "./transactions/CardTransaction";
 
 type Transaction = CardTransaction;
 

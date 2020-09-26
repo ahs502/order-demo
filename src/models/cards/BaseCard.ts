@@ -1,6 +1,4 @@
-export const cardTypes = ["text", "markdown", "todo"] as const;
-
-export type CardType = typeof cardTypes[number];
+import type CardType from "./CardType";
 
 export default interface BaseCard<T extends CardType> {
   readonly type: T;

@@ -1,4 +1,4 @@
-import Page from "./Page";
+import type Page from "./Page";
 
 export default interface Content {
   readonly pages: readonly Page[];

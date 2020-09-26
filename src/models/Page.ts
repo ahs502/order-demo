@@ -1,5 +1,5 @@
-import Card from "./Card";
-import User from "./User";
+import type Card from "./Card";
+import type User from "./User";
 
 export default interface Page {
   readonly id: Id;

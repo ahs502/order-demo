@@ -1,6 +1,6 @@
-import MarkdownCard from "./cards/MarkdownCard";
-import TextCard from "./cards/TextCard";
-import ToDoCard from "./cards/ToDoCard";
+import type MarkdownCard from "./cards/MarkdownCard";
+import type TextCard from "./cards/TextCard";
+import type ToDoCard from "./cards/ToDoCard";
 
 type Card = TextCard | MarkdownCard | ToDoCard;
 
