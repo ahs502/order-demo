@@ -5,6 +5,7 @@ import persistent from "../../persistent";
 import initializeContentFailed from "../action-creators/initialize-content-failed";
 import initializeContentRequested from "../action-creators/initialize-content-requested";
 import initializeContentSucceeded from "../action-creators/initialize-content-succeeded";
+
 import isContentNotInitialized from "../selectors/is-content-not-initialized";
 
 export default function initializeContent(): ThunkAction {
