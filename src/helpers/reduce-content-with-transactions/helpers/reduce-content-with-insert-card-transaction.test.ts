@@ -5,7 +5,7 @@ import generateDummyData from "../../generate-dummy-data";
 import reduceContentWithInsertCardTransaction from "./reduce-content-with-insert-card-transaction";
 
 describe("reduceContentWithInsertCardTransaction() helper", () => {
-  test("It should add the new card to the page when page is empty", () => {
+  test("It should add the new card to the page when page card list is empty", () => {
     const pageId = generateDummyData();
     const content: Content = {
       pages: [

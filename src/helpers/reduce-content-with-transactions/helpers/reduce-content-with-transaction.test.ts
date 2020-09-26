@@ -1,6 +1,7 @@
 import DeleteCardTransaction from "../../../models/transactions/card-transactions/DeleteCardTransaction";
 import EditCardTransaction from "../../../models/transactions/card-transactions/EditCardTransaction";
 import InsertCardTransaction from "../../../models/transactions/card-transactions/InsertCardTransaction";
+import Transaction from "../../../models/Transaction";
 import TransactionType from "../../../models/transactions/TransactionType";
 import generateDummyData from "../../generate-dummy-data";
 import reduceContentWithTransaction from "./reduce-content-with-transaction";
@@ -27,7 +28,18 @@ jest.mock("./reduce-content-with-delete-card-transaction", () => ({
 }));
 
 describe("reduceContentWithTransaction() helper", () => {
-  test("It should call reduceContentWithInsertCardTransaction() helper for an InsertCardTransaction", () => {
+  test("It should pass the same given content when the transaction is unknown", () => {
+    const content = generateDummyData();
+    const transaction = ({
+      type: generateDummyData(),
+    } as unknown) as Transaction;
+
+    const result = reduceContentWithTransaction(content, transaction);
+
+    expect(result).toBe(content);
+  });
+
+  test("It should fallback to the reduceContentWithInsertCardTransaction() helper for an InsertCardTransaction", () => {
     const content = generateDummyData();
     const transaction: InsertCardTransaction = {
       type: TransactionType.CardTransactionType.INSERT_CARD,
@@ -47,7 +59,7 @@ describe("reduceContentWithTransaction() helper", () => {
     expect(result).toBe(expectedResult);
   });
 
-  test("It should call reduceContentWithEditCardTransaction() helper for an EditCardTransaction", () => {
+  test("It should fallback to the reduceContentWithEditCardTransaction() helper for an EditCardTransaction", () => {
     const content = generateDummyData();
     const transaction: EditCardTransaction = {
       type: TransactionType.CardTransactionType.EDIT_CARD,
@@ -67,7 +79,7 @@ describe("reduceContentWithTransaction() helper", () => {
     expect(result).toBe(expectedResult);
   });
 
-  test("It should call reduceContentWithDeleteCardTransaction() helper for a DeleteCardTransaction", () => {
+  test("It should fallback to the reduceContentWithDeleteCardTransaction() helper for a DeleteCardTransaction", () => {
     const content = generateDummyData();
     const transaction: DeleteCardTransaction = {
       type: TransactionType.CardTransactionType.DELETE_CARD,

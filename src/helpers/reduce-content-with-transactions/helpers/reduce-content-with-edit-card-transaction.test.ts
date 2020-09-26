@@ -5,7 +5,7 @@ import generateDummyData from "../../generate-dummy-data";
 import reduceContentWithEditCardTransaction from "./reduce-content-with-edit-card-transaction";
 
 describe("reduceContentWithEditCardTransaction() helper", () => {
-  test("It should replace the card at the specified index at the page card list", () => {
+  test("It should replace the card at the specified index of the page card list", () => {
     const pageId = generateDummyData();
     const cardsBefore = [generateDummyData(), generateDummyData()];
     const oldCard = generateDummyData();

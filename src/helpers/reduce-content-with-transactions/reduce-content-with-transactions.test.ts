@@ -9,7 +9,7 @@ jest.mock("./helpers/reduce-content-with-transaction", () => ({
 }));
 
 describe("reduceContentWithTransactions() helper", () => {
-  test("It should return the same context if there are no transactions", () => {
+  test("It should return the same content if there are no transactions", () => {
     const content = generateDummyData();
 
     const result = reduceContentWithTransactions(content, []);
