@@ -1,0 +1,26 @@
+.AttachmentView-root {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid blue;
+  border-radius: 3pt;
+  padding: 5px 0;
+  background-color: lightblue;
+}
+
+.AttachmentView-link {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.AttachmentView-type {
+  font-weight: bold;
+}
+
+.AttachmentView-name {
+  font-style: italic;
+}
+
+.AttachmentView-remove {
+  margin: 0 10px;
+}
