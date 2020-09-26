@@ -2,8 +2,8 @@ import { Store } from "redux";
 import { useStore } from "react-redux";
 
 import type State from "../store/State";
+import type Action from "../store/Action";
 
-//TODO: Improve the Action type:
-export default function useTypedStore(): Store<State, any> {
-  return useStore<State, any>();
+export default function useTypedStore(): Store<State, Action> {
+  return useStore();
 }
