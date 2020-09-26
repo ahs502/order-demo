@@ -1,7 +1,7 @@
 enum CardTransactionType {
-  INSERT_CARD = "insert card",
-  EDIT_CARD = "edit card",
-  DELETE_CARD = "delete card",
+  INSERT_CARD = "INSERT_CARD",
+  EDIT_CARD = "EDIT_CARD",
+  DELETE_CARD = "DELETE_CARD",
 }
 
 export default CardTransactionType;

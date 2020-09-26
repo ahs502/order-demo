@@ -15,6 +15,6 @@ Setup Redux-Thunk & Define actions:
 
 Sep 26:
 
-Reduciton logic:
+Transaction reduciton logic:
 10:05 - 13:10 = 03:05
 14:50 - 

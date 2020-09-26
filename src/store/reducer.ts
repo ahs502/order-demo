@@ -1,6 +1,5 @@
-import type State from "./State";
+import State, { ContentInitializationStatus } from "./State";
 import type Action from "./Action";
-
 import initialState from "./initial-state";
 import ActionType from "./ActionType";
 
@@ -14,14 +13,14 @@ export default function reducer(
     case ActionType.INITIALIZE_CONTENT_REQUESTED:
       return {
         ...state,
-        contentInitializationStatus: "initializing",
+        contentInitializationStatus: ContentInitializationStatus.INITIALIZING,
         contentInitializationError: null,
       };
 
     case ActionType.INITIALIZE_CONTENT_SUCCEEDED:
       return {
         ...state,
-        contentInitializationStatus: "initialized",
+        contentInitializationStatus: ContentInitializationStatus.INITIALIZED,
         content: reduceContentWithTransactions(
           action.content,
           action.transactions
@@ -31,7 +30,8 @@ export default function reducer(
     case ActionType.INITIALIZE_CONTENT_FAILED:
       return {
         ...state,
-        contentInitializationStatus: "failed to be initialized",
+        contentInitializationStatus:
+          ContentInitializationStatus.FAILED_TO_BE_INITIALIZED,
         contentInitializationError: action.error,
       };
 

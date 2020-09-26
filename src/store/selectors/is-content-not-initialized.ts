@@ -1,5 +1,8 @@
-import type State from "../State";
+import State, { ContentInitializationStatus } from "../State";
 
 export default function isContentNotInitialized(state: State): boolean {
-  return state.contentInitializationStatus === "not initialized";
+  return (
+    state.contentInitializationStatus ===
+    ContentInitializationStatus.NOT_INITIALIZED
+  );
 }

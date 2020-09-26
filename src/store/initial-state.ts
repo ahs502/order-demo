@@ -1,8 +1,8 @@
-import type State from "./State";
+import State, { ContentInitializationStatus } from "./State";
 
 const initialState: State = {
   currentUser: null,
-  contentInitializationStatus: "not initialized",
+  contentInitializationStatus: ContentInitializationStatus.NOT_INITIALIZED,
   contentInitializationError: null,
   content: {
     pages: [],

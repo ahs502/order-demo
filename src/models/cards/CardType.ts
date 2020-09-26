@@ -1,7 +1,7 @@
 enum CardType {
-  TEXT = "text",
-  MARKDOWN = "markdown",
-  TODO = "todo",
+  TEXT = "TEXT",
+  MARKDOWN = "MARKDOWN",
+  TODO = "TODO",
 }
 
 export default CardType;
