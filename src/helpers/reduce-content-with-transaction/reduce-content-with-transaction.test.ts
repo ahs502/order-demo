@@ -1,28 +1,28 @@
-import DeleteCardTransaction from "../../../models/transactions/card-transactions/DeleteCardTransaction";
-import EditCardTransaction from "../../../models/transactions/card-transactions/EditCardTransaction";
-import InsertCardTransaction from "../../../models/transactions/card-transactions/InsertCardTransaction";
-import Transaction from "../../../models/Transaction";
-import TransactionType from "../../../models/transactions/TransactionType";
-import generateDummyData from "../../generate-dummy-data";
+import DeleteCardTransaction from "../../models/transactions/card-transactions/DeleteCardTransaction";
+import EditCardTransaction from "../../models/transactions/card-transactions/EditCardTransaction";
+import InsertCardTransaction from "../../models/transactions/card-transactions/InsertCardTransaction";
+import Transaction from "../../models/Transaction";
+import TransactionType from "../../models/transactions/TransactionType";
+import generateDummyData from "../generate-dummy-data";
 import reduceContentWithTransaction from "./reduce-content-with-transaction";
 
 var mockReduceContentWithInsertCardTransaction: jest.Mock;
-import "./reduce-content-with-insert-card-transaction";
-jest.mock("./reduce-content-with-insert-card-transaction", () => ({
+import "./helpers/reduce-content-with-insert-card-transaction";
+jest.mock("./helpers/reduce-content-with-insert-card-transaction", () => ({
   __esModule: true,
   default: mockReduceContentWithInsertCardTransaction = jest.fn(),
 }));
 
 var mockReduceContentWithEditCardTransaction: jest.Mock;
-import "./reduce-content-with-edit-card-transaction";
-jest.mock("./reduce-content-with-edit-card-transaction", () => ({
+import "./helpers/reduce-content-with-edit-card-transaction";
+jest.mock("./helpers/reduce-content-with-edit-card-transaction", () => ({
   __esModule: true,
   default: mockReduceContentWithEditCardTransaction = jest.fn(),
 }));
 
 var mockReduceContentWithDeleteCardTransaction: jest.Mock;
-import "./reduce-content-with-delete-card-transaction";
-jest.mock("./reduce-content-with-delete-card-transaction", () => ({
+import "./helpers/reduce-content-with-delete-card-transaction";
+jest.mock("./helpers/reduce-content-with-delete-card-transaction", () => ({
   __esModule: true,
   default: mockReduceContentWithDeleteCardTransaction = jest.fn(),
 }));

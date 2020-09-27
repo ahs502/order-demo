@@ -4,6 +4,7 @@ import initialState from "./initial-state";
 import ActionType from "./ActionType";
 
 import reduceContentWithTransactions from "../helpers/reduce-content-with-transactions";
+import reduceContentWithTransaction from "../helpers/reduce-content-with-transaction";
 
 export default function reducer(
   state: State = initialState,
@@ -35,7 +36,30 @@ export default function reducer(
         contentInitializationError: action.error,
       };
 
+    case ActionType.APPLY_TRANSACTION_STARTED:
+      return {
+        ...state,
+        applyingTransaction: action.transaction,
+      };
+
+    case ActionType.APPLY_TRANSACTION_SUCCEEDED:
+      return {
+        ...state,
+        content: reduceContentWithTransaction(
+          state.content,
+          state.applyingTransaction!
+        ),
+        applyingTransaction: null,
+      };
+
+    case ActionType.APPLY_TRANSACTION_FAILED:
+      return {
+        ...state,
+        applyingTransaction: null,
+      };
+
     default:
+      // typeof action should be never at this point.
       return state;
   }
 }

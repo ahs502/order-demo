@@ -1,3 +1,6 @@
+import ApplyTransactionFailedAction from "./actions/ApplyTransactionFailedAction";
+import ApplyTransactionStartedAction from "./actions/ApplyTransactionStartedAction";
+import ApplyTransactionSucceededAction from "./actions/ApplyTransactionSucceededAction";
 import InitializeContentFailedAction from "./actions/InitializeContentFailedAction";
 import InitializeContentStartedAction from "./actions/InitializeContentStartedAction";
 import InitializeContentSucceededAction from "./actions/InitializeContentSucceededAciton";
@@ -5,6 +8,9 @@ import InitializeContentSucceededAction from "./actions/InitializeContentSucceed
 type Action =
   | InitializeContentStartedAction
   | InitializeContentSucceededAction
-  | InitializeContentFailedAction;
+  | InitializeContentFailedAction
+  | ApplyTransactionStartedAction
+  | ApplyTransactionSucceededAction
+  | ApplyTransactionFailedAction;
 
 export default Action;

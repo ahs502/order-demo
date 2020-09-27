@@ -2,8 +2,8 @@ import generateDummyData from "../generate-dummy-data";
 import reduceContentWithTransactions from "./reduce-content-with-transactions";
 
 var mockReduceContentWithTransaction: jest.Mock;
-import "./helpers/reduce-content-with-transaction";
-jest.mock("./helpers/reduce-content-with-transaction", () => ({
+import "../reduce-content-with-transaction";
+jest.mock("../reduce-content-with-transaction", () => ({
   __esModule: true,
   default: mockReduceContentWithTransaction = jest.fn(),
 }));

@@ -1,7 +1,7 @@
 import Content from "../../models/Content";
 import Transaction from "../../models/Transaction";
 
-import reduceContentWithTransaction from "./helpers/reduce-content-with-transaction";
+import reduceContentWithTransaction from "../reduce-content-with-transaction";
 
 export default function reduceContentWithTransactions(
   content: Content,

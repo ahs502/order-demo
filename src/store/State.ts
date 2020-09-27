@@ -1,4 +1,5 @@
 import Content from "../models/Content";
+import Transaction from "../models/Transaction";
 import User from "../models/User";
 
 export default interface State {
@@ -6,6 +7,7 @@ export default interface State {
   readonly contentInitializationStatus: ContentInitializationStatus;
   readonly contentInitializationError: any;
   readonly content: Content;
+  readonly applyingTransaction: Transaction | null;
 }
 
 export enum ContentInitializationStatus {

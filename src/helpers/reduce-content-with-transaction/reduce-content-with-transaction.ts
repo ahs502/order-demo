@@ -1,11 +1,11 @@
-import Content from "../../../models/Content";
-import Transaction from "../../../models/Transaction";
+import Content from "../../models/Content";
+import Transaction from "../../models/Transaction";
 
-import TransactionType from "../../../models/transactions/TransactionType";
+import TransactionType from "../../models/transactions/TransactionType";
 
-import reduceContentWithInsertCardTransaction from "./reduce-content-with-insert-card-transaction";
-import reduceContentWithEditCardTransaction from "./reduce-content-with-edit-card-transaction";
-import reduceContentWithDeleteCardTransaction from "./reduce-content-with-delete-card-transaction";
+import reduceContentWithInsertCardTransaction from "./helpers/reduce-content-with-insert-card-transaction";
+import reduceContentWithEditCardTransaction from "./helpers/reduce-content-with-edit-card-transaction";
+import reduceContentWithDeleteCardTransaction from "./helpers/reduce-content-with-delete-card-transaction";
 
 export default function reduceContentWithTransaction(
   content: Content,

@@ -10,6 +10,7 @@ const initialState: State = {
   contentInitializationStatus: ContentInitializationStatus.NOT_INITIALIZED,
   contentInitializationError: null,
   content: initialContent,
+  applyingTransaction: null,
 };
 
 export default initialState;
