@@ -35,3 +35,6 @@ View components & Apply transaction async action:
 05:50 - 08:10 = 02:20
 10:55 - 11:40 = 00:45
 11:50 - 12:35 = 00:45
+
+App component:
+14:25 - 16:25 = 02:00
