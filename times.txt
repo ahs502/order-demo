@@ -49,8 +49,12 @@ Store selected page index:
 Action loader show & Push down transactions into the local storage:
 17:10 - 17:35 = 00:25
 
+Improve initial data & Display card type:
+17:35 - 18:00 = 00:25
+
 ---------------------
 
 TODO:
-> Improve initial data
 > Store initial content
+> See what is up in the 'public' folder
+> Deploy the final application
