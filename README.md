@@ -8,6 +8,33 @@
 
 ---
 
+To setup the project after clone:
+
+```sh
+$ npm i
+```
+
+To run all tests:
+
+```sh
+$ npm run test:all
+```
+
+To serve the application:
+
+```sh
+$ npm run serve
+```
+
+> **IMPORTANT NOTE:** You may use the browser's **incognito mode**
+> in order to avoid facing offline cach pitfalls in the future.
+
+---
+
+---
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
