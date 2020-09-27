@@ -14,6 +14,7 @@ import getAllPages from '../../store/selectors/get-all-pages';
 import getCurrentUser from '../../store/selectors/get-current-user';
 import getSelectedPage from '../../store/selectors/get-selected-page';
 import isContentInitializing from '../../store/selectors/is-content-initializing';
+import isTransacting from '../../store/selectors/is-transacting';
 
 import PageView from '../PageView';
 
@@ -22,6 +23,7 @@ import './App.css';
 export default function App() {
   const contentIsInitializing = useTypedSelector(isContentInitializing)
   const currentUser = useTypedSelector(getCurrentUser)
+  const transacting = useTypedSelector(isTransacting)
   const pages = useTypedSelector(getAllPages)
   const selectedPage = useTypedSelector(getSelectedPage)
 
@@ -74,6 +76,7 @@ export default function App() {
       <div className='App-body'>
         <h1 className='App-current-user'>
           Hello, <em data-testid='current-user-name'>{currentUser.name}</em>!
+          {transacting && <span className='App-loading'>&nbsp;&nbsp;&nbsp;Please wait...</span>}
         </h1>
         <div className='App-page-selectors'>
           <p>Select your page:</p>

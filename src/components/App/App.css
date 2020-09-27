@@ -14,6 +14,11 @@
   padding: 10px;
 }
 
+.App-loading {
+  color: red;
+  font-size: 70%;
+}
+
 .App-page-selectors {
   margin-bottom: 10px;
 }
