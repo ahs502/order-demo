@@ -32,9 +32,24 @@ View components & Apply transaction async action:
 19:40 - 21:30 = 01:50
 22:45 - 11:00 = 00:15
 11:20 - 12:00 = 00:40
+
+Sep 27:
+
+View components & Apply transaction async action:
 05:50 - 08:10 = 02:20
 10:55 - 11:40 = 00:45
 11:50 - 12:35 = 00:45
 
 App component:
 14:25 - 16:25 = 02:00
+
+Store selected page index:
+16:25 - 17:10 = 00:45
+
+---------------------
+
+TODO:
+> Action loader show
+> Improve initial data
+> Store initial content
+> Push down transactions into the local storage
