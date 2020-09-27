@@ -19,6 +19,13 @@
   font-size: 70%;
 }
 
+.App-force-push {
+  display: block;
+  padding: 5px 15px;
+  font-size: 130%;
+  margin-bottom: 30px;
+}
+
 .App-page-selectors {
   margin-bottom: 10px;
 }

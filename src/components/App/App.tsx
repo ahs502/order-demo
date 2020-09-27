@@ -5,12 +5,16 @@ import Card from '../../models/Card';
 import Page from '../../models/Page';
 import TransactionType from '../../models/transactions/TransactionType';
 
+import forceReduceTransactionsInLocalStorage from '../../helpers/force-reduce-transactions-in-local-storage';
+
 import useTypedDispatch from '../../hooks/use-typed-dispatch';
 import useTypedSelector from '../../hooks/use-typed-selector';
+
 import applyTransaction from '../../store/async-action-creators/apply-transaction';
 import initializeContent from '../../store/async-action-creators/initialize-content';
 import selectPage from '../../store/async-action-creators/select-page';
 import getAllPages from '../../store/selectors/get-all-pages';
+import getContent from '../../store/selectors/get-content';
 import getCurrentUser from '../../store/selectors/get-current-user';
 import getSelectedPage from '../../store/selectors/get-selected-page';
 import isContentInitializing from '../../store/selectors/is-content-initializing';
@@ -22,6 +26,7 @@ import './App.css';
 
 export default function App() {
   const contentIsInitializing = useTypedSelector(isContentInitializing)
+  const content = useTypedSelector(getContent)
   const currentUser = useTypedSelector(getCurrentUser)
   const transacting = useTypedSelector(isTransacting)
   const pages = useTypedSelector(getAllPages)
@@ -74,6 +79,7 @@ export default function App() {
         <small>Source code: <a href='https://github.com/ahs502/order-demo' target='_blank'>https://github.com/ahs502/order-demo</a></small>
       </header>
       <div className='App-body'>
+        <button className='App-force-push' onClick={() => forceReduceTransactionsInLocalStorage(content)}><strong>[DEVELOPERS ONLY!]</strong> Force reduce transactions into the local storage</button>
         <h1 className='App-current-user'>
           Hello, <em data-testid='current-user-name'>{currentUser.name}</em>!
           {transacting && <span className='App-loading'>&nbsp;&nbsp;&nbsp;Please wait...</span>}
