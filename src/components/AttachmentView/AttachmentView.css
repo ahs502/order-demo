@@ -1,10 +1,13 @@
 .AttachmentView-root {
   display: inline-block;
-  margin: 10px;
+  margin-right: 10px;
   border: 1px solid blue;
   border-radius: 3pt;
   padding: 5px 0;
-  background-color: lightblue;
+  background-color: #d6f5ff;
+}
+.AttachmentView-root:last-child {
+  margin-right: 0;
 }
 
 .AttachmentView-link {

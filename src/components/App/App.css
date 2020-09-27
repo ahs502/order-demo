@@ -9,6 +9,9 @@
   line-height: 44px;
   padding: 0 10px;
 }
+.App-header * {
+  color: white;
+}
 
 .App-body {
   padding: 10px;

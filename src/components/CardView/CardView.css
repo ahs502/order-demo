@@ -1,0 +1,16 @@
+.CardView-root {
+  border: 1px solid green;
+  border-radius: 3pt;
+  padding: 10px;
+  background-color: #dcffdc;
+}
+
+.CardView-remove {
+}
+
+.CardView-main {
+  padding: 10px 0;
+}
+
+.CardView-attachments {
+}
