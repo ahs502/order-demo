@@ -52,9 +52,10 @@ Action loader show & Push down transactions into the local storage:
 Improve initial data & Display card type:
 17:35 - 18:00 = 00:25
 
+Store initial content & See what is up in the 'public' folder:
+10:55 - 11:25 = 00:30
+
 ---------------------
 
 TODO:
-> Store initial content
-> See what is up in the 'public' folder
 > Deploy the final application
