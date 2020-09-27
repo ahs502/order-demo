@@ -1,9 +1,9 @@
 import InitializeContentFailedAction from "./actions/InitializeContentFailedAction";
-import InitializeContentRequestedAction from "./actions/InitializeContentRequestedAction";
+import InitializeContentStartedAction from "./actions/InitializeContentStartedAction";
 import InitializeContentSucceededAction from "./actions/InitializeContentSucceededAciton";
 
 type Action =
-  | InitializeContentRequestedAction
+  | InitializeContentStartedAction
   | InitializeContentSucceededAction
   | InitializeContentFailedAction;
 

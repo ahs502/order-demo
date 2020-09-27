@@ -10,7 +10,7 @@ export default function reducer(
   action: Action
 ): State {
   switch (action.type) {
-    case ActionType.INITIALIZE_CONTENT_REQUESTED:
+    case ActionType.INITIALIZE_CONTENT_STARTED:
       return {
         ...state,
         contentInitializationStatus: ContentInitializationStatus.INITIALIZING,
