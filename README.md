@@ -1,3 +1,13 @@
+## Order Demo
+
+### Hessamoddin A Shokravi
+
+---
+
+---
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -45,4 +55,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
-- [Local Forage](https://localforage.github.io/localForage/) is used for local storage management. It supports IndexDB, WebSQL, and finally falls back to localStorage.
+## Integrations
+
+[Local Forage](https://localforage.github.io/localForage/) is used for local storage management. It supports IndexDB, WebSQL, and finally falls back to localStorage.
+
+The main logic and component implementation are all well tested. Run `CI=true npm test` to execute them all.
