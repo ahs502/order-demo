@@ -29,6 +29,7 @@ const users: readonly User[] = [
 
 const firstPage: Page = {
   id: "page-id-first",
+  name: "My First Page",
   owner: initialCurrentUser,
   members: [users[0], users[1], users[2], users[3]],
   cards: [
@@ -53,6 +54,7 @@ const firstPage: Page = {
 
 const secondPage: Page = {
   id: "page-id-second",
+  name: "My Second Page",
   owner: users[2],
   members: [initialCurrentUser, users[0], users[3], users[4]],
   cards: [

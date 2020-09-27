@@ -1,0 +1,10 @@
+.PageView-root {
+  border: 1px solid darkgoldenrod;
+  border-radius: 3pt;
+  padding: 20px;
+  background-color: #fff8de;
+}
+
+.PageView-cards {
+  padding-top: 20px;
+}

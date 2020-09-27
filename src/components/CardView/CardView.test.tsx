@@ -5,7 +5,7 @@ import CardView from './CardView'
 import { AttachmentViewProps } from '../AttachmentView/AttachmentView';
 
 import generateDummyData from '../../helpers/generate-dummy-data';
-React.createElement
+
 var MockAttachmentView: jest.Mock
 import '../AttachmentView'
 jest.mock('../AttachmentView', () => ({

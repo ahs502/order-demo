@@ -4,6 +4,8 @@ import CardType from "../models/cards/CardType";
 import MarkdownCard from "../models/cards/MarkdownCard";
 import TextCard from "../models/cards/TextCard";
 import ToDoCard from "../models/cards/ToDoCard";
+import Page from "../models/Page";
+import User from "../models/User";
 
 export default function generateDummyData(): any {
   return {} as any;
@@ -11,7 +13,7 @@ export default function generateDummyData(): any {
 
 generateDummyData.string = () => Math.random().toString() as any;
 generateDummyData.number = (upperLimit: number = 1000000) =>
-  Math.floor(Math.random() * upperLimit) as any;
+  Math.floor(Math.random() * upperLimit + 1) as any;
 generateDummyData.boolean = () => (Math.random() > 0.5) as any;
 generateDummyData.function = () => (() => {}) as any;
 
@@ -41,9 +43,24 @@ generateDummyData.toDoCard = (): ToDoCard => ({
 });
 generateDummyData.card = (): Card => {
   const index = generateDummyData.number(3);
-  if (index === 0) return generateDummyData.textCard();
-  if (index === 1) return generateDummyData.markdownCard();
-  return generateDummyData.toDoCard();
+  if (index === 1) return generateDummyData.textCard();
+  if (index === 2) return generateDummyData.markdownCard();
+  /*if (index === 3)*/ return generateDummyData.toDoCard();
 };
 generateDummyData.cards = (count: number = 10): readonly Card[] =>
   Array(count).fill(null).map(generateDummyData.card);
+
+generateDummyData.user = (): User => ({
+  id: generateDummyData.string(),
+  name: generateDummyData.string(),
+});
+generateDummyData.users = (count: number = 3) =>
+  Array(count).fill(null).map(generateDummyData.user);
+
+generateDummyData.page = (): Page => ({
+  id: generateDummyData.string(),
+  name: generateDummyData.string(),
+  owner: generateDummyData.user(),
+  members: generateDummyData.users(),
+  cards: generateDummyData.cards(),
+});
