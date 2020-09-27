@@ -4,18 +4,23 @@ import CardType from "../models/cards/CardType";
 import MarkdownCard from "../models/cards/MarkdownCard";
 import TextCard from "../models/cards/TextCard";
 import ToDoCard from "../models/cards/ToDoCard";
+import Content from "../models/Content";
 import Page from "../models/Page";
 import User from "../models/User";
+import State, { ContentInitializationStatus } from "../store/State";
 
 export default function generateDummyData(): any {
   return {} as any;
 }
+
+let idBase = 0;
 
 generateDummyData.string = () => Math.random().toString() as any;
 generateDummyData.number = (upperLimit: number = 1000000) =>
   Math.floor(Math.random() * upperLimit + 1) as any;
 generateDummyData.boolean = () => (Math.random() > 0.5) as any;
 generateDummyData.function = () => (() => {}) as any;
+generateDummyData.id = () => String(++idBase) as any;
 
 generateDummyData.attachment = (): Attachment => ({
   type: generateDummyData.string(),
@@ -51,16 +56,35 @@ generateDummyData.cards = (count: number = 10): readonly Card[] =>
   Array(count).fill(null).map(generateDummyData.card);
 
 generateDummyData.user = (): User => ({
-  id: generateDummyData.string(),
+  id: generateDummyData.id(),
   name: generateDummyData.string(),
 });
 generateDummyData.users = (count: number = 3) =>
   Array(count).fill(null).map(generateDummyData.user);
 
 generateDummyData.page = (): Page => ({
-  id: generateDummyData.string(),
+  id: generateDummyData.id(),
   name: generateDummyData.string(),
   owner: generateDummyData.user(),
   members: generateDummyData.users(),
   cards: generateDummyData.cards(),
 });
+generateDummyData.pages = (count: number = 3) =>
+  Array(count).fill(null).map(generateDummyData.page);
+
+generateDummyData.content = (): Content => ({
+  pages: generateDummyData.pages(),
+});
+
+generateDummyData.state = (): State => {
+  const content = generateDummyData.content();
+
+  return {
+    currentUser: generateDummyData.user(),
+    contentInitializationStatus: ContentInitializationStatus.INITIALIZED,
+    contentInitializationError: null,
+    content,
+    selectedPage: content.pages[0],
+    applyingTransaction: null,
+  };
+};

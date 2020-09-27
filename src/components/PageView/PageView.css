@@ -2,7 +2,14 @@
   border: 1px solid darkgoldenrod;
   border-radius: 3pt;
   padding: 20px;
+  padding-top: 0;
   background-color: #fff8de;
+}
+
+.PageView-message {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .PageView-cards {

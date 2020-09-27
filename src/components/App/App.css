@@ -1,6 +1,3 @@
-.App-root {
-}
-
 .App-header {
   background-color: darkblue;
   color: white;
@@ -15,4 +12,19 @@
 
 .App-body {
   padding: 10px;
+}
+
+.App-page-selectors {
+  margin-bottom: 10px;
+}
+
+.App-page-selector {
+  margin-right: 10px;
+  padding: 5px 15px;
+  font-size: 130%;
+}
+
+.App-page-selector-highlighted {
+  color: white;
+  background-color: blue;
 }

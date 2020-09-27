@@ -11,52 +11,74 @@ export default function reducer(
   action: Action
 ): State {
   switch (action.type) {
-    case ActionType.INITIALIZE_CONTENT_STARTED:
+    case ActionType.INITIALIZE_CONTENT_STARTED: {
       return {
         ...state,
         contentInitializationStatus: ContentInitializationStatus.INITIALIZING,
         contentInitializationError: null,
       };
+    }
 
-    case ActionType.INITIALIZE_CONTENT_SUCCEEDED:
+    case ActionType.INITIALIZE_CONTENT_SUCCEEDED: {
+      const content = reduceContentWithTransactions(
+        action.content || state.content,
+        action.transactions || []
+      );
+
       return {
         ...state,
         contentInitializationStatus: ContentInitializationStatus.INITIALIZED,
-        content: reduceContentWithTransactions(
-          action.content || state.content,
-          action.transactions || []
-        ),
+        content,
+        selectedPage: content.pages[0],
       };
+    }
 
-    case ActionType.INITIALIZE_CONTENT_FAILED:
+    case ActionType.INITIALIZE_CONTENT_FAILED: {
       return {
         ...state,
         contentInitializationStatus:
           ContentInitializationStatus.FAILED_TO_BE_INITIALIZED,
         contentInitializationError: action.error,
       };
+    }
 
-    case ActionType.APPLY_TRANSACTION_STARTED:
+    case ActionType.APPLY_TRANSACTION_STARTED: {
       return {
         ...state,
         applyingTransaction: action.transaction,
       };
+    }
 
-    case ActionType.APPLY_TRANSACTION_SUCCEEDED:
+    case ActionType.APPLY_TRANSACTION_SUCCEEDED: {
+      const content = reduceContentWithTransaction(
+        state.content,
+        state.applyingTransaction!
+      );
+      const selectedPage =
+        content.pages[state.content.pages.indexOf(state.selectedPage)] ||
+        content.pages[0];
+
       return {
         ...state,
-        content: reduceContentWithTransaction(
-          state.content,
-          state.applyingTransaction!
-        ),
+        content,
+        selectedPage,
         applyingTransaction: null,
       };
+    }
 
-    case ActionType.APPLY_TRANSACTION_FAILED:
+    case ActionType.APPLY_TRANSACTION_FAILED: {
       return {
         ...state,
         applyingTransaction: null,
       };
+    }
+
+    case ActionType.SELECT_PAGE: {
+      return {
+        ...state,
+        selectedPage: action.selectedPage,
+      };
+    }
 
     default:
       // typeof action should be never at this point.

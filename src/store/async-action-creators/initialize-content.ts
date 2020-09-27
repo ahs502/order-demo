@@ -6,12 +6,12 @@ import initializeContentFailed from "../action-creators/initialize-content-faile
 import initializeContentStarted from "../action-creators/initialize-content-started";
 import initializeContentSucceeded from "../action-creators/initialize-content-succeeded";
 
-import isContentNotInitialized from "../selectors/is-content-not-initialized";
+import isContentFresh from "../selectors/is-content-fresh";
 
 export default function initializeContent(): ThunkAction {
   return async (dispatch, getState) => {
-    const contentIsNotInitialized = isContentNotInitialized(getState());
-    if (!contentIsNotInitialized) return;
+    const contentIsFresh = isContentFresh(getState());
+    if (!contentIsFresh) return;
 
     dispatch(initializeContentStarted());
 
@@ -23,6 +23,8 @@ export default function initializeContent(): ThunkAction {
 
       dispatch(initializeContentSucceeded(content, transactions));
     } catch (error) {
+      console.error(error);
+      alert(error);
       dispatch(initializeContentFailed(error));
     }
   };

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
+
 import Card from '../../models/Card';
 import CardType from '../../models/cards/CardType';
-
 import Page from '../../models/Page';
+
 import CardView from '../CardView';
 
 import './PageView.css'
@@ -37,6 +38,8 @@ export default function PageView({ page, onAddCard, onEditCard, onRemoveCard }: 
   const [selectedCardTypeOption, setSelectedCardTypeOption] = useState(cardTypeSelectOptions[0])
   const [text, setText] = useState('')
 
+  const memberNames = useMemo(() => page.members.map(({ name }) => name).join('\n'), [page])
+
   function handleAddCard(): void {
     const newCard: Card =
       selectedCardTypeOption.value === CardType.TEXT ?
@@ -66,6 +69,8 @@ export default function PageView({ page, onAddCard, onEditCard, onRemoveCard }: 
       <h3 className='PageView-owner'>
         Owner:&nbsp;&nbsp;
         <strong data-testid='owner-name'>{page.owner.name}</strong>
+        &nbsp;&nbsp;
+        <button title={memberNames} onClick={() => alert(memberNames)}>{page.members.length} members</button>
       </h3>
       <div className='PageView-form'>
         <select

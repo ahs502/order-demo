@@ -1,4 +1,5 @@
 import Content from "../models/Content";
+import Page from "../models/Page";
 import Transaction from "../models/Transaction";
 import User from "../models/User";
 
@@ -7,6 +8,7 @@ export default interface State {
   readonly contentInitializationStatus: ContentInitializationStatus;
   readonly contentInitializationError: any;
   readonly content: Content;
+  readonly selectedPage: Page;
   readonly applyingTransaction: Transaction | null;
 }
 
