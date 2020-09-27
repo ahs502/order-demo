@@ -46,10 +46,11 @@ App component:
 Store selected page index:
 16:25 - 17:10 = 00:45
 
+Action loader show & Push down transactions into the local storage:
+17:10 - 17:35 = 00:25
+
 ---------------------
 
 TODO:
-> Action loader show
 > Improve initial data
 > Store initial content
-> Push down transactions into the local storage
