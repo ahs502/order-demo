@@ -14,12 +14,12 @@ export default function ToDoCardBody({ card, onChange }: ToDoCardBodyProps) {
   const [editMode, setEditMode] = useState(false)
   const [label, setText] = useState(card.label)
 
-  function handleChangeChecked(): void {
+  function handleChangeChecked(checked: boolean): void {
     if (!onChange) return
 
     const newCard: ToDoCard = {
       ...card,
-      checked: !card.checked
+      checked
     }
 
     onChange(newCard)
@@ -43,11 +43,11 @@ export default function ToDoCardBody({ card, onChange }: ToDoCardBodyProps) {
       'ToDoCardBody-root-view-mode': !editMode,
       'ToDoCardBody-edit-mode': editMode
     })}>
-      <input className='ToDoCardBody-checkbox' type='checkbox' checked={card.checked} onClick={handleChangeChecked} disabled={editMode} />
+      <input className='ToDoCardBody-checkbox' type='checkbox' checked={card.checked} onChange={event => handleChangeChecked(event.target.checked)} disabled={editMode} />
       &nbsp;&nbsp;
       {!editMode && (
         <>
-          <div className='ToDoCardBody-label'>{card.label}</div>
+          <label className='ToDoCardBody-label'>{card.label}</label>
           &nbsp;&nbsp;
           <button className='ToDoCardBody-edit' title='Edit this card' onClick={() => {
             setText(card.label)
