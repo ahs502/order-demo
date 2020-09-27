@@ -57,3 +57,6 @@ Store initial content & See what is up in the 'public' folder:
 
 NPM scripts & Offline mode test:
 11:25 - 12:00 = 00:35
+
+Final review and refinements:
+12:00 - 12:20 = 00:20
