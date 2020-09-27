@@ -55,7 +55,5 @@ Improve initial data & Display card type:
 Store initial content & See what is up in the 'public' folder:
 10:55 - 11:25 = 00:30
 
----------------------
-
-TODO:
-> Deploy the final application
+NPM scripts & Offline mode test:
+11:25 - 12:00 = 00:35
