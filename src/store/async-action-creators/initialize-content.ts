@@ -2,9 +2,9 @@ import { ThunkAction } from "../Thunk";
 
 import persistent from "../../persistent";
 
-import initializeContentFailed from "../action-creators/initialize-content-failed";
-import initializeContentStarted from "../action-creators/initialize-content-started";
-import initializeContentSucceeded from "../action-creators/initialize-content-succeeded";
+import initializeContentFailedAction from "../action-creators/initialize-content-failed-action";
+import initializeContentStartedAction from "../action-creators/initialize-content-started-action";
+import initializeContentSucceededAction from "../action-creators/initialize-content-succeeded-action";
 
 import isContentFresh from "../selectors/is-content-fresh";
 
@@ -13,19 +13,22 @@ export default function initializeContent(): ThunkAction {
     const contentIsFresh = isContentFresh(getState());
     if (!contentIsFresh) return;
 
-    dispatch(initializeContentStarted());
+    dispatch(initializeContentStartedAction());
 
     try {
-      const [content, transactions] = await Promise.all([
+      const [content, transactions, selectedPageId] = await Promise.all([
         persistent("content").get(),
         persistent("transactions").get(),
+        persistent("selectedPageId").get(),
       ]);
 
-      dispatch(initializeContentSucceeded(content, transactions));
+      dispatch(
+        initializeContentSucceededAction(content, transactions, selectedPageId)
+      );
     } catch (error) {
       console.error(error);
       alert(error);
-      dispatch(initializeContentFailed(error));
+      dispatch(initializeContentFailedAction(error));
     }
   };
 }

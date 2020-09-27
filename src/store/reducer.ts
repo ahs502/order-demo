@@ -24,12 +24,15 @@ export default function reducer(
         action.content || state.content,
         action.transactions || []
       );
+      const selectedPage =
+        content.pages.find(({ id }) => id === action.selectedPageId) ||
+        content.pages[0];
 
       return {
         ...state,
         contentInitializationStatus: ContentInitializationStatus.INITIALIZED,
         content,
-        selectedPage: content.pages[0],
+        selectedPage,
       };
     }
 
@@ -73,7 +76,7 @@ export default function reducer(
       };
     }
 
-    case ActionType.SELECT_PAGE: {
+    case ActionType.PAGE_SELECTED: {
       return {
         ...state,
         selectedPage: action.selectedPage,

@@ -6,4 +6,5 @@ export default interface Persistent {
   user: User;
   content: Content;
   transactions: readonly Transaction[];
+  selectedPageId: Id;
 }

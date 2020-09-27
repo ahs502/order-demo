@@ -1,13 +1,15 @@
-import classNames from 'classnames';
 import React, { useEffect } from 'react';
-import useTypedDispatch from '../../hooks/use-typed-dispatch';
-import useTypedSelector from '../../hooks/use-typed-selector';
+import classNames from 'classnames';
+
 import Card from '../../models/Card';
 import Page from '../../models/Page';
 import TransactionType from '../../models/transactions/TransactionType';
-import selectPage from '../../store/action-creators/select-page';
+
+import useTypedDispatch from '../../hooks/use-typed-dispatch';
+import useTypedSelector from '../../hooks/use-typed-selector';
 import applyTransaction from '../../store/async-action-creators/apply-transaction';
 import initializeContent from '../../store/async-action-creators/initialize-content';
+import selectPage from '../../store/async-action-creators/select-page';
 import getAllPages from '../../store/selectors/get-all-pages';
 import getCurrentUser from '../../store/selectors/get-current-user';
 import getSelectedPage from '../../store/selectors/get-selected-page';
@@ -29,8 +31,8 @@ export default function App() {
     dispatch(initializeContent())
   }, [])
 
-  function handleSelectPage(page: Page): void {
-    dispatch(selectPage(page))
+  async function handleSelectPage(page: Page): Promise<void> {
+    const done = await dispatch(selectPage(page))
   }
   function handleAddCard(newCard: Card): void {
     dispatch(applyTransaction({

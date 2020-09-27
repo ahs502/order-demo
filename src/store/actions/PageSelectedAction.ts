@@ -3,7 +3,7 @@ import BaseAction from "./BaseAction";
 
 import Page from "../../models/Page";
 
-export default interface SelectPageAction
-  extends BaseAction<ActionType.SELECT_PAGE> {
+export default interface PageSelectedAction
+  extends BaseAction<ActionType.PAGE_SELECTED> {
   readonly selectedPage: Page;
 }

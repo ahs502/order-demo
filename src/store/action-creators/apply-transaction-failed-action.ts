@@ -1,7 +1,7 @@
 import ApplyTransactionFailedAction from "../actions/ApplyTransactionFailedAction";
 import ActionType from "../ActionType";
 
-export default function applyTransactionFailed(
+export default function applyTransactionFailedAction(
   error: any
 ): ApplyTransactionFailedAction {
   return {

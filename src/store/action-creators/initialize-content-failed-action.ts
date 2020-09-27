@@ -1,7 +1,7 @@
 import InitializeContentFailedAction from "../actions/InitializeContentFailedAction";
 import ActionType from "../ActionType";
 
-export default function initializeContentFailed(
+export default function initializeContentFailedAction(
   error: any
 ): InitializeContentFailedAction {
   return {

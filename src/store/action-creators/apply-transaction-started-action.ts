@@ -2,7 +2,7 @@ import Transaction from "../../models/Transaction";
 import ApplyTransactionStartedAction from "../actions/ApplyTransactionStartedAction";
 import ActionType from "../ActionType";
 
-export default function applyTransactionStarted(
+export default function applyTransactionStartedAction(
   transaction: Transaction
 ): ApplyTransactionStartedAction {
   return {

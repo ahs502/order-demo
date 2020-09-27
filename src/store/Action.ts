@@ -4,7 +4,7 @@ import ApplyTransactionSucceededAction from "./actions/ApplyTransactionSucceeded
 import InitializeContentFailedAction from "./actions/InitializeContentFailedAction";
 import InitializeContentStartedAction from "./actions/InitializeContentStartedAction";
 import InitializeContentSucceededAction from "./actions/InitializeContentSucceededAciton";
-import SelectPageAction from "./actions/SelectPageAction";
+import PageSelectedAction from "./actions/PageSelectedAction";
 
 type Action =
   | InitializeContentStartedAction
@@ -13,6 +13,6 @@ type Action =
   | ApplyTransactionStartedAction
   | ApplyTransactionSucceededAction
   | ApplyTransactionFailedAction
-  | SelectPageAction;
+  | PageSelectedAction;
 
 export default Action;

@@ -7,13 +7,20 @@ import { Provider } from 'react-redux';
 import App from './App';
 
 import generateDummyData from '../../helpers/generate-dummy-data';
-import selectPage from '../../store/action-creators/select-page';
+import pageSelectedAction from '../../store/action-creators/page-selected-action';
 
 var MockPageView: jest.Mock
 import '../PageView';
 jest.mock('../PageView', () => ({
   __esModule: true,
   default: MockPageView = jest.fn(() => null)
+}))
+
+var mockSelectPage: jest.Mock
+import '../../store/async-action-creators/select-page';
+jest.mock('../../store/async-action-creators/select-page', () => ({
+  __esModule: true,
+  default: mockSelectPage = jest.fn(() => ({ type: null }))
 }))
 
 const mockStore = configureStore([reduxThunk])
@@ -48,11 +55,9 @@ describe('App component', () => {
     )
 
     state.content.pages.forEach(page => {
-      store.clearActions()
       const element = getByTestId(`page-selector-for-id-${page.id}`)
       element.click()
-      const action = store.getActions()[0]
-      expect(action).toEqual(selectPage(page))
+      expect(mockSelectPage).toHaveBeenCalledWith(page)
     })
   })
 

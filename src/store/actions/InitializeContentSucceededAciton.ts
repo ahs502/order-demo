@@ -8,4 +8,5 @@ export default interface InitializeContentSucceededAction
   extends BaseAction<ActionType.INITIALIZE_CONTENT_SUCCEEDED> {
   readonly content: Content | undefined;
   readonly transactions: readonly Transaction[] | undefined;
+  readonly selectedPageId: Id | undefined;
 }
