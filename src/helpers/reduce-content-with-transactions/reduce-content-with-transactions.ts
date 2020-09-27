@@ -8,7 +8,7 @@ export default function reduceContentWithTransactions(
   transactions: readonly Transaction[]
 ): Content {
   return transactions.reduce(
-    (content, transaction) =>
+    (content, transaction, transactionIndex, transactions) =>
       reduceContentWithTransaction(content, transaction),
     content
   );

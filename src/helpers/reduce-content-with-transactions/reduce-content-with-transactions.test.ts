@@ -19,20 +19,12 @@ describe("reduceContentWithTransactions() helper", () => {
 
   test("It should reduce content with transactions using the reduceContentWithTransaction() helper", () => {
     const baseContent = generateDummyData();
-    const steps = [
-      {
+    const steps = Array(10)
+      .fill(null)
+      .map(() => ({
         transaction: generateDummyData(),
         resultedContent: generateDummyData(),
-      },
-      {
-        transaction: generateDummyData(),
-        resultedContent: generateDummyData(),
-      },
-      {
-        transaction: generateDummyData(),
-        resultedContent: generateDummyData(),
-      },
-    ];
+      }));
     const transactions = steps.map(({ transaction }) => transaction);
     const finalContent = steps[steps.length - 1].resultedContent;
     steps.forEach(({ resultedContent }) =>

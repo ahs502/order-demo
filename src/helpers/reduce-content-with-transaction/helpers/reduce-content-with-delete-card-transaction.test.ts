@@ -15,6 +15,7 @@ describe("reduceContentWithDeleteCardTransaction() helper", () => {
       pages: [
         {
           id: pageId,
+          name: generateDummyData(),
           owner: generateDummyData(),
           members: generateDummyData(),
           cards: [...cardsBefore, targetedCard, ...cardsAfter],

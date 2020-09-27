@@ -84,7 +84,8 @@ export default function reducer(
     }
 
     default:
-      // typeof action should be never at this point.
+      // typeof action must be <never> at this point.
+      // Otherwise, there are some uncovered action types here.
       return state;
   }
 }

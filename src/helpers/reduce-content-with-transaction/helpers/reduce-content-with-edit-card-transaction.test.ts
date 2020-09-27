@@ -16,6 +16,7 @@ describe("reduceContentWithEditCardTransaction() helper", () => {
       pages: [
         {
           id: pageId,
+          name: generateDummyData(),
           owner: generateDummyData(),
           members: generateDummyData(),
           cards,

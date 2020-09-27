@@ -9,6 +9,10 @@ import Page from "../models/Page";
 import User from "../models/User";
 import State, { ContentInitializationStatus } from "../store/State";
 
+/**
+ * Generates some dummy data with different types,
+ * widely used in test suits.
+ */
 export default function generateDummyData(): any {
   return {} as any;
 }
