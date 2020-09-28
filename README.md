@@ -27,7 +27,7 @@ $ npm run serve
 ```
 
 > **IMPORTANT NOTE:** You may use the browser's **incognito mode**
-> in order to avoid facing offline cach pitfalls in the future.
+> in order to avoid facing offline cache pitfalls in the future.
 
 ---
 
